@@ -1,6 +1,6 @@
 # zabbix_script_list_if-ip
 
-Display list of matching ip addresses and interfaces from 10. subnet.
+Display list of matching ip addresses and interfaces for 10. subnet.
 
 Output example:
 
