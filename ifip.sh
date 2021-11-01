@@ -1,0 +1,1 @@
+snmpwalk -v 2c -c {$SNMP_COMMUNITY} {HOST.CONN} 1.3.6.1.2.1.4.20.1.2 | grep 10. | sed -e "s/iso.3.6.1.2.1.4.20.1.2.//" | sed -e "s/ = INTEGER: / 1.3.6.1.2.1.2.2.1.2./" | awk '{print $1; system("snmpwalk -v 2c -c {$SNMP_COMMUNITY} {HOST.CONN} " $2)}' | xargs -L2 | sed -e "s/iso.3.6.1.2.1.2.2.1.2.* = STRING: //"
